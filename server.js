@@ -93,10 +93,11 @@ app.post('/post_login', (req, res) => {
 })
 
 app.post('/post_reporte', (req, res) => {
-    let datosReporte = req.body;
-    db.run(`INSERT INTO reportes_salas (id_personal_responsable, score_P1, score_P2, score_P3, score_P4, score_P5, id_sala) VALUES (1, ${datosReporte[0]}, ${datosReporte[1]},${datosReporte[2]},${datosReporte[3]},${datosReporte[4]})`)
-    
-  });
+  let datosReporte = req.body;
+  console.log(datosReporte)
+  db.run(`INSERT INTO reportes_salas (id_personal_responsable, score_P1, score_P2, score_P3, score_P4, score_P5, id_sala) VALUES (1, ${datosReporte[0]}, ${datosReporte[1]},${datosReporte[2]},${datosReporte[3]},${datosReporte[4]})`)
+
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
